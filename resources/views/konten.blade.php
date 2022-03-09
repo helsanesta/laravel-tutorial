@@ -1,10 +1,10 @@
 @extends('layouts.template')
 
 @section('container')
-<article class="mb-5">
-    <h3>{{ $article->title }}                   
-    </h3>
-    <h6>By: {{ $article->author }}</h6>
+    <h3 class="mb-5">{{ $article->title }}</h3>
+    {{-- <h6>By: {{ $article->author }}</h6> --}}
+    <p>By. {{ $article->author }} in <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a></p>
    {!! $article->body !!}
-</article>
+
+   <a href="/article">Back to posts</a>
 @endsection

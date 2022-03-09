@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    //protected $fillable = ['title', 'slug', 'author', 'body', 'excerpt'];
     protected $guarded = ['id'];
 
-    public function category()
+    public function articles()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Article::class);
     }
 }
