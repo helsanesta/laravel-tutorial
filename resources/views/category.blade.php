@@ -8,7 +8,7 @@
         <h3> 
             <a href="/article/{{ $article->slug }}" > {{ $article->title }}</a>                    
         </h3>
-        <h6>By: {{ $article->author }}</h6>
+        {{-- <h6>By: Helsa Nesta Dhaifullah</h6> --}}
         <p>{{ $article->excerpt }}</p>
     </article>
     @endforeach
