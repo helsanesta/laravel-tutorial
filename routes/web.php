@@ -125,16 +125,15 @@ Route::get('/categories', function () {
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('category', [
-        'title' => $category->name,
-        'articles' => $category->articles,
-        'category' => $category->name
+    return view('article', [
+        'title' => "Post By Category : $category->name",
+        'articles' => $category->articles->load('category', 'author')
     ]);
 });
 
 Route::get('/author/{author:username}', function (User $author) {
     return view('article', [
-        'title' => "User Articles",
-        'articles' => $author->articles,
+        'title' => "Post By Author : $author->name",
+        'articles' => $author->articles->load('category', 'author')
     ]);
 });

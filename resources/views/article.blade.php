@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('container')
-    <h1>{{ $title }}</h1>
+    <h1 class="mb-5">{{ $title }}</h1>
     {{-- <h5>editor: {{ $name }} | {{ $email }}</h5> --}}
     <hr/>
     @foreach($articles as $article)

@@ -10,10 +10,10 @@ class ArticleController extends Controller
 
     public function index() {
         return view('article', [
-            "title" => "Halaman Artikel",
+            "title" => "All Posts",
             // "name" => "Helsa Nesta Dhaifullah",
             // "email" => "helsa.205025@mhs.its.ac.id",
-            "articles" => Article::latest()->get()
+            "articles" => Article::with(['author', 'category'])->latest()->get()
         ]);
     }
 
